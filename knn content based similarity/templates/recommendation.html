@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Movies</title>
+    <style>
+        .movies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .movie {
+            flex: 1 0 20%;  /* flex-grow | flex-shrink | flex-basis */
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recommended Movies</h1>
+    <div class="movies">
+        {% for movie in recommendations %}
+        <div class="movie">
+            <h2>{{ movie.title }}</h2>
+            <img src="{{ movie.poster_url }}" alt="Movie Poster" width="200">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
